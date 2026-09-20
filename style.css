@@ -1,86 +1,242 @@
-/* Latar meja kayu */
+/* ============ RESET & BODY ============ */
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
 body {
-  margin: 0;
+  font-family: 'Segoe UI', Tahoma, sans-serif;
   min-height: 100vh;
-  font-family: 'Segoe UI', sans-serif;
-  background: 
-    repeating-linear-gradient(
-      90deg,
-      #6b4423 0px,
-      #7a4f2a 2px,
-      #6b4423 4px
-    ),
-    #5c3a1e;
+  padding: 30px 20px;
   display: flex;
   justify-content: center;
-  align-items: center;
-  padding: 40px;
+  align-items: flex-start;
+
+  /* Latar meja kayu */
+  background:
+    repeating-linear-gradient(
+      90deg,
+      rgba(0,0,0,0.06) 0px,
+      rgba(0,0,0,0.06) 2px,
+      transparent 2px,
+      transparent 6px
+    ),
+    repeating-linear-gradient(
+      0deg,
+      rgba(255,255,255,0.03) 0px,
+      rgba(255,255,255,0.03) 1px,
+      transparent 1px,
+      transparent 40px
+    ),
+    radial-gradient(ellipse at center, #7a4f2a 0%, #4a2c14 100%);
 }
 
+/* ============ PANEL UTAMA ============ */
 .desk {
   width: 100%;
-  max-width: 1200px;
-  background: linear-gradient(145deg, #3a3a3a, #2a2a2a);
-  border-radius: 20px;
-  padding: 40px;
+  max-width: 1280px;
+  background: linear-gradient(145deg, #3d3d3d, #2a2a2a);
+  border-radius: 24px;
+  padding: 30px;
   box-shadow:
-    inset 0 2px 4px rgba(255,255,255,0.1),
-    inset 0 -2px 4px rgba(0,0,0,0.5),
-    0 20px 50px rgba(0,0,0,0.6);
+    inset 0 2px 3px rgba(255,255,255,0.12),
+    inset 0 -3px 6px rgba(0,0,0,0.6),
+    0 25px 60px rgba(0,0,0,0.7),
+    0 5px 15px rgba(0,0,0,0.4);
   border: 1px solid #1a1a1a;
 }
 
-.title {
-  color: #e0e0e0;
-  text-shadow: 
-    0 1px 0 #000,
-    0 -1px 0 #555;
-  text-align: center;
+/* ============ HEADER ============ */
+.panel-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 25px;
+  margin-bottom: 25px;
+  background: linear-gradient(180deg, #4a4a4a, #333);
+  border-radius: 14px;
+  border: 1px solid #1a1a1a;
+  box-shadow:
+    inset 0 1px 0 rgba(255,255,255,0.15),
+    inset 0 -2px 4px rgba(0,0,0,0.4),
+    0 4px 10px rgba(0,0,0,0.5);
+  flex-wrap: wrap;
+  gap: 15px;
+}
+
+.brand { display: flex; align-items: center; gap: 15px; }
+
+.logo-plate {
+  width: 55px;
+  height: 55px;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(145deg, #d4af37, #8b6914);
+  box-shadow:
+    inset 0 1px 0 rgba(255,255,255,0.4),
+    inset 0 -2px 4px rgba(0,0,0,0.4),
+    0 3px 6px rgba(0,0,0,0.5);
+  border: 1px solid #5a4408;
+}
+
+.logo-icon { font-size: 28px; filter: drop-shadow(0 1px 1px rgba(0,0,0,0.4)); }
+
+.brand-text h1 {
+  font-size: 20px;
+  color: #e8e8e8;
+  letter-spacing: 3px;
+  text-shadow: 0 1px 0 #000, 0 -1px 0 #666;
+}
+
+.brand-text p {
+  font-size: 12px;
+  color: #999;
+  letter-spacing: 1px;
+  text-shadow: 0 1px 0 #000;
+}
+
+/* Status Bar */
+.status-bar { display: flex; align-items: center; gap: 20px; }
+
+.status-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 13px;
+  color: #bbb;
+  text-shadow: 0 1px 0 #000;
+}
+
+.led-green {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: radial-gradient(circle at 30% 30%, #b3ffb3, #00cc00);
+  box-shadow: 0 0 8px #00ff00, 0 0 3px #00aa00 inset;
+  animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.5; }
+}
+
+.clock {
+  font-family: 'Courier New', monospace;
+  font-size: 16px;
+  color: #7fff7f;
+  background: #0a1a0a;
+  padding: 6px 14px;
+  border-radius: 6px;
+  border: 1px solid #000;
+  box-shadow:
+    inset 0 2px 5px rgba(0,0,0,0.8),
+    inset 0 -1px 0 rgba(255,255,255,0.05);
+  text-shadow: 0 0 8px #00ff00;
   letter-spacing: 2px;
 }
 
-.panel-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-  gap: 25px;
+/* ============ SEARCH ============ */
+.search-console { margin-bottom: 25px; display: flex; justify-content: center; }
+
+.search-well {
+  position: relative;
+  width: 100%;
+  max-width: 500px;
+  display: flex;
+  align-items: center;
 }
 
-/* Kartu perangkat */
+.search-well input {
+  width: 100%;
+  padding: 12px 15px 12px 45px;
+  font-size: 15px;
+  color: #ddd;
+  background: linear-gradient(180deg, #1a1a1a, #262626);
+  border: 1px solid #0a0a0a;
+  border-radius: 10px;
+  outline: none;
+  box-shadow:
+    inset 0 3px 6px rgba(0,0,0,0.7),
+    inset 0 -1px 0 rgba(255,255,255,0.05),
+    0 1px 0 rgba(255,255,255,0.1);
+  transition: all 0.2s;
+}
+
+.search-well input:focus {
+  box-shadow:
+    inset 0 3px 6px rgba(0,0,0,0.7),
+    inset 0 -1px 0 rgba(255,255,255,0.05),
+    0 0 0 2px rgba(212,175,55,0.5);
+}
+
+.search-well input::placeholder { color: #666; }
+
+.search-icon {
+  position: absolute;
+  left: 15px;
+  font-size: 16px;
+  opacity: 0.6;
+  pointer-events: none;
+}
+
+/* ============ GRID ============ */
+.panel-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(230px, 1fr));
+  gap: 22px;
+  margin-bottom: 25px;
+}
+
+/* ============ KARTU DEVICE ============ */
 .device-card {
   position: relative;
   text-decoration: none;
   color: #333;
-  background: linear-gradient(145deg, #f0f0f0, #c8c8c8);
-  border-radius: 15px;
-  padding: 25px 20px;
+  background: linear-gradient(145deg, #f5f5f5, #c8c8c8);
+  border-radius: 16px;
+  padding: 22px 18px 18px;
   text-align: center;
   box-shadow:
-    inset 1px 1px 2px rgba(255,255,255,0.9),
-    inset -1px -1px 2px rgba(0,0,0,0.2),
-    0 8px 15px rgba(0,0,0,0.4),
+    inset 1px 1px 2px rgba(255,255,255,0.95),
+    inset -1px -1px 3px rgba(0,0,0,0.25),
+    0 8px 15px rgba(0,0,0,0.45),
     0 2px 4px rgba(0,0,0,0.3);
-  border: 1px solid #999;
-  transition: all 0.15s ease;
+  border: 1px solid #9a9a9a;
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.device-card::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 40%;
+  background: linear-gradient(180deg, rgba(255,255,255,0.6), transparent);
+  border-radius: 16px 16px 0 0;
+  pointer-events: none;
 }
 
 .device-card:hover {
-  transform: translateY(-2px);
+  transform: translateY(-3px);
   box-shadow:
-    inset 1px 1px 2px rgba(255,255,255,0.9),
-    inset -1px -1px 2px rgba(0,0,0,0.2),
-    0 12px 20px rgba(0,0,0,0.5),
-    0 3px 6px rgba(0,0,0,0.35);
+    inset 1px 1px 2px rgba(255,255,255,0.95),
+    inset -1px -1px 3px rgba(0,0,0,0.25),
+    0 14px 22px rgba(0,0,0,0.55),
+    0 4px 8px rgba(0,0,0,0.35);
 }
 
 .device-card:active {
   transform: translateY(2px);
   box-shadow:
-    inset 2px 2px 5px rgba(0,0,0,0.3),
-    inset -1px -1px 2px rgba(255,255,255,0.5),
+    inset 2px 2px 6px rgba(0,0,0,0.35),
+    inset -1px -1px 2px rgba(255,255,255,0.6),
     0 2px 4px rgba(0,0,0,0.3);
 }
 
-/* LED indikator */
+/* LED indicator */
 .led {
   position: absolute;
   top: 12px;
@@ -88,55 +244,125 @@ body {
   width: 12px;
   height: 12px;
   border-radius: 50%;
-  background: #555;
-  box-shadow: 
-    inset 0 1px 2px rgba(0,0,0,0.6),
-    0 0 3px rgba(0,0,0,0.5);
+  background: radial-gradient(circle at 30% 30%, #888, #444);
+  box-shadow:
+    inset 0 1px 2px rgba(0,0,0,0.7),
+    0 0 3px rgba(0,0,0,0.4);
+  z-index: 2;
 }
 
 .led.online {
-  background: radial-gradient(circle at 30% 30%, #7fff7f, #00aa00);
+  background: radial-gradient(circle at 30% 30%, #b3ffb3, #00aa00);
   box-shadow:
-    inset 0 1px 2px rgba(255,255,255,0.5),
+    inset 0 1px 2px rgba(255,255,255,0.6),
     0 0 8px #00ff00,
     0 0 15px #00aa00;
   animation: pulse 2s infinite;
 }
 
-@keyframes pulse {
-  0%, 100% { opacity: 1; }
-  50% { opacity: 0.7; }
+.led.offline {
+  background: radial-gradient(circle at 30% 30%, #ff9999, #aa0000);
+  box-shadow: inset 0 1px 2px rgba(0,0,0,0.7), 0 0 5px #ff0000;
 }
 
+/* Ikon */
 .icon {
-  font-size: 48px;
-  filter: drop-shadow(0 2px 3px rgba(0,0,0,0.3));
-  margin-bottom: 10px;
+  font-size: 42px;
+  margin-bottom: 12px;
+  filter: drop-shadow(0 2px 3px rgba(0,0,0,0.35));
+  position: relative;
+  z-index: 1;
+}
+
+.device-card h3 {
+  font-size: 14px;
+  color: #2a2a2a;
+  margin-bottom: 6px;
+  text-shadow: 0 1px 0 rgba(255,255,255,0.7);
+  line-height: 1.3;
+  min-height: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  z-index: 1;
+}
+
+.device-card p {
+  font-size: 11px;
+  color: #666;
+  margin-bottom: 14px;
+  line-height: 1.4;
+  min-height: 30px;
+  position: relative;
+  z-index: 1;
 }
 
 /* Tombol 3D */
 .btn-skeuo {
-  margin-top: 15px;
-  padding: 10px 25px;
+  width: 100%;
+  padding: 9px 18px;
+  font-size: 12px;
   font-weight: bold;
   color: #444;
-  background: linear-gradient(180deg, #ffffff, #d0d0d0);
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  background: linear-gradient(180deg, #ffffff, #d5d5d5);
   border: 1px solid #888;
   border-radius: 8px;
   cursor: pointer;
   box-shadow:
-    inset 0 1px 0 rgba(255,255,255,0.9),
-    inset 0 -2px 3px rgba(0,0,0,0.15),
+    inset 0 1px 0 rgba(255,255,255,0.95),
+    inset 0 -2px 4px rgba(0,0,0,0.15),
     0 3px 0 #999,
-    0 4px 6px rgba(0,0,0,0.3);
+    0 5px 8px rgba(0,0,0,0.3);
   transition: all 0.1s;
+  position: relative;
+  z-index: 1;
 }
 
-.btn-skeuo:active {
+.device-card:hover .btn-skeuo {
+  background: linear-gradient(180deg, #fffbe8, #e6d896);
+  border-color: #a88818;
+}
+
+.device-card:active .btn-skeuo {
   transform: translateY(3px);
   box-shadow:
-    inset 0 1px 0 rgba(255,255,255,0.9),
+    inset 0 1px 0 rgba(255,255,255,0.95),
     inset 0 -1px 2px rgba(0,0,0,0.15),
     0 0 0 #999,
     0 1px 2px rgba(0,0,0,0.3);
+}
+
+/* ============ FOOTER ============ */
+.panel-footer {
+  text-align: center;
+  padding: 12px;
+  font-size: 11px;
+  color: #777;
+  letter-spacing: 1px;
+  text-shadow: 0 1px 0 #000;
+  border-top: 1px solid rgba(255,255,255,0.05);
+}
+
+/* ============ RESPONSIVE ============ */
+@media (max-width: 600px) {
+  body { padding: 15px 10px; }
+  .desk { padding: 18px; border-radius: 18px; }
+  .panel-header { padding: 12px 15px; }
+  .brand-text h1 { font-size: 15px; letter-spacing: 2px; }
+  .brand-text p { font-size: 10px; }
+  .logo-plate { width: 42px; height: 42px; }
+  .logo-icon { font-size: 22px; }
+  .clock { font-size: 12px; padding: 4px 10px; }
+  .panel-grid {
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    gap: 14px;
+  }
+  .icon { font-size: 32px; }
+  .device-card { padding: 16px 12px 14px; }
+  .device-card h3 { font-size: 12px; min-height: 32px; }
+  .device-card p { font-size: 10px; min-height: 26px; }
+  .btn-skeuo { font-size: 10px; padding: 7px 12px; }
 }
