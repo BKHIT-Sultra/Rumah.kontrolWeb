@@ -3,49 +3,53 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>🏠 Ruang Kontrol BKHIT Sultra</title>
+  <meta name="description" content="Ruang Kontrol Aplikasi BKHIT Sulawesi Tenggara">
+  <meta name="theme-color" content="#e8edf3">
+  <title>🛡️ Ruang Kontrol — BKHIT Sultra</title>
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🛡️</text></svg>">
   <link rel="stylesheet" href="style.css">
-  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🏠</text></svg>">
 </head>
 <body>
-  <div class="desk">
-    <!-- Header Panel -->
-    <header class="panel-header">
+
+  <div class="clay-room">
+
+    <!-- HEADER -->
+    <header class="clay-header">
       <div class="brand">
-        <div class="logo-plate">
-          <span class="logo-icon">🏠</span>
-        </div>
+        <div class="clay-logo">🛡️</div>
         <div class="brand-text">
-          <h1>RUANG KONTROL</h1>
+          <h1>Ruang Kontrol</h1>
           <p>BKHIT Sulawesi Tenggara</p>
         </div>
       </div>
 
-      <div class="status-bar">
-        <div class="status-item">
-          <span class="led-green"></span>
+      <div class="status-cluster">
+        <div class="clay-chip">
+          <span class="clay-dot"></span>
           <span id="onlineCount">0 Online</span>
         </div>
-        <div class="clock" id="clock">--:--:--</div>
+        <div class="clay-clock" id="clock">--:--:--</div>
       </div>
     </header>
 
-    <!-- Search -->
-    <div class="search-console">
-      <div class="search-well">
-        <span class="search-icon">🔍</span>
-        <input type="text" id="searchInput" placeholder="Cari aplikasi...">
-      </div>
+    <!-- HERO -->
+    <div class="clay-hero">
+      <h2>Sistem Operasional</h2>
+      <p>Pilih Modul Aplikasi</p>
     </div>
 
-    <!-- Grid Aplikasi -->
-    <main class="panel-grid" id="appGrid">
-      <!-- Kartu akan dibuat oleh JavaScript -->
-    </main>
+    <!-- SEARCH -->
+    <div class="clay-search">
+      <span class="clay-search-icon">🔍</span>
+      <input type="text" id="searchInput" placeholder="Cari modul...">
+    </div>
 
-    <!-- Footer -->
-    <footer class="panel-footer">
-      <span>© <span id="year"></span> BKHIT Sultra — Dashboard Pribadi</span>
+    <!-- GRID -->
+    <main class="clay-grid" id="appGrid"></main>
+
+    <!-- FOOTER -->
+    <footer class="clay-footer">
+      © <span id="year"></span> BKHIT Sultra — Secure Dashboard
     </footer>
   </div>
 
