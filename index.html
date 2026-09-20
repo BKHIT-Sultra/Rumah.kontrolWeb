@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>🏠 Ruang Kontrol BKHIT Sultra</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🏠</text></svg>">
+</head>
+<body>
+  <div class="desk">
+    <!-- Header Panel -->
+    <header class="panel-header">
+      <div class="brand">
+        <div class="logo-plate">
+          <span class="logo-icon">🏠</span>
+        </div>
+        <div class="brand-text">
+          <h1>RUANG KONTROL</h1>
+          <p>BKHIT Sulawesi Tenggara</p>
+        </div>
+      </div>
+
+      <div class="status-bar">
+        <div class="status-item">
+          <span class="led-green"></span>
+          <span id="onlineCount">0 Online</span>
+        </div>
+        <div class="clock" id="clock">--:--:--</div>
+      </div>
+    </header>
+
+    <!-- Search -->
+    <div class="search-console">
+      <div class="search-well">
+        <span class="search-icon">🔍</span>
+        <input type="text" id="searchInput" placeholder="Cari aplikasi...">
+      </div>
+    </div>
+
+    <!-- Grid Aplikasi -->
+    <main class="panel-grid" id="appGrid">
+      <!-- Kartu akan dibuat oleh JavaScript -->
+    </main>
+
+    <!-- Footer -->
+    <footer class="panel-footer">
+      <span>© <span id="year"></span> BKHIT Sultra — Dashboard Pribadi</span>
+    </footer>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
