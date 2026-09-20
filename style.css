@@ -1,0 +1,142 @@
+/* Latar meja kayu */
+body {
+  margin: 0;
+  min-height: 100vh;
+  font-family: 'Segoe UI', sans-serif;
+  background: 
+    repeating-linear-gradient(
+      90deg,
+      #6b4423 0px,
+      #7a4f2a 2px,
+      #6b4423 4px
+    ),
+    #5c3a1e;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 40px;
+}
+
+.desk {
+  width: 100%;
+  max-width: 1200px;
+  background: linear-gradient(145deg, #3a3a3a, #2a2a2a);
+  border-radius: 20px;
+  padding: 40px;
+  box-shadow:
+    inset 0 2px 4px rgba(255,255,255,0.1),
+    inset 0 -2px 4px rgba(0,0,0,0.5),
+    0 20px 50px rgba(0,0,0,0.6);
+  border: 1px solid #1a1a1a;
+}
+
+.title {
+  color: #e0e0e0;
+  text-shadow: 
+    0 1px 0 #000,
+    0 -1px 0 #555;
+  text-align: center;
+  letter-spacing: 2px;
+}
+
+.panel-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 25px;
+}
+
+/* Kartu perangkat */
+.device-card {
+  position: relative;
+  text-decoration: none;
+  color: #333;
+  background: linear-gradient(145deg, #f0f0f0, #c8c8c8);
+  border-radius: 15px;
+  padding: 25px 20px;
+  text-align: center;
+  box-shadow:
+    inset 1px 1px 2px rgba(255,255,255,0.9),
+    inset -1px -1px 2px rgba(0,0,0,0.2),
+    0 8px 15px rgba(0,0,0,0.4),
+    0 2px 4px rgba(0,0,0,0.3);
+  border: 1px solid #999;
+  transition: all 0.15s ease;
+}
+
+.device-card:hover {
+  transform: translateY(-2px);
+  box-shadow:
+    inset 1px 1px 2px rgba(255,255,255,0.9),
+    inset -1px -1px 2px rgba(0,0,0,0.2),
+    0 12px 20px rgba(0,0,0,0.5),
+    0 3px 6px rgba(0,0,0,0.35);
+}
+
+.device-card:active {
+  transform: translateY(2px);
+  box-shadow:
+    inset 2px 2px 5px rgba(0,0,0,0.3),
+    inset -1px -1px 2px rgba(255,255,255,0.5),
+    0 2px 4px rgba(0,0,0,0.3);
+}
+
+/* LED indikator */
+.led {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: #555;
+  box-shadow: 
+    inset 0 1px 2px rgba(0,0,0,0.6),
+    0 0 3px rgba(0,0,0,0.5);
+}
+
+.led.online {
+  background: radial-gradient(circle at 30% 30%, #7fff7f, #00aa00);
+  box-shadow:
+    inset 0 1px 2px rgba(255,255,255,0.5),
+    0 0 8px #00ff00,
+    0 0 15px #00aa00;
+  animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.7; }
+}
+
+.icon {
+  font-size: 48px;
+  filter: drop-shadow(0 2px 3px rgba(0,0,0,0.3));
+  margin-bottom: 10px;
+}
+
+/* Tombol 3D */
+.btn-skeuo {
+  margin-top: 15px;
+  padding: 10px 25px;
+  font-weight: bold;
+  color: #444;
+  background: linear-gradient(180deg, #ffffff, #d0d0d0);
+  border: 1px solid #888;
+  border-radius: 8px;
+  cursor: pointer;
+  box-shadow:
+    inset 0 1px 0 rgba(255,255,255,0.9),
+    inset 0 -2px 3px rgba(0,0,0,0.15),
+    0 3px 0 #999,
+    0 4px 6px rgba(0,0,0,0.3);
+  transition: all 0.1s;
+}
+
+.btn-skeuo:active {
+  transform: translateY(3px);
+  box-shadow:
+    inset 0 1px 0 rgba(255,255,255,0.9),
+    inset 0 -1px 2px rgba(0,0,0,0.15),
+    0 0 0 #999,
+    0 1px 2px rgba(0,0,0,0.3);
+}
