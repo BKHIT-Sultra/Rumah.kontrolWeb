@@ -21,7 +21,7 @@ const apps = [
   },
   {
     name: "SLA BBKHIT",
-    url: "https://script.google.com/macros/s/AKfycbx8PPCFWEQalJ9Lfzt3UVCCjHIZThPf0hi4bQZctN1G61Ikl_iPiqInGZS6iF7TAmlr/exec",
+    url: "https://bkhit-sultra.github.io/Verifikasi.SLA/",
     icon: "⏱️",
     desc: "Standar Layanan & Kinerja",
     color: "bronze"
